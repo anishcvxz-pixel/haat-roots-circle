@@ -21,7 +21,7 @@ const Footer = () => (
       <div>
         <h4 className="font-serif text-base font-semibold mb-3">Project Details</h4>
         <ul className="space-y-1.5 text-sm opacity-90">
-          <li>Intern: [Student Name]</li>
+          <li>Intern: Anish Tigga</li>
           <li>Organization: Foundation for Ecological Security (FES)</li>
           <li>Period: April – May 2026</li>
           <li>District: Kondagaon, Chhattisgarh</li>
