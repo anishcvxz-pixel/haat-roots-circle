@@ -95,6 +95,12 @@ const Recommendations = () => (
         </div>
       </div>
     </section>
+
+    <PageTransition
+      summary="Recommendations gain credibility from the data behind them. The final chapter opens up the underlying field dataset — sellers, buyers, prices, products, and problems — through an interactive dashboard that lets readers explore the evidence themselves."
+      prev={{ to: "/problems-gaps", chapter: "Chapter 08", label: "Problems and Gaps" }}
+      next={{ to: "/dashboard", chapter: "Chapter 10", label: "Field Data Dashboard" }}
+    />
   </>
 );
 
