@@ -1,4 +1,6 @@
 import PageHeader from "@/components/layout/PageHeader";
+import SectionIntro from "@/components/layout/SectionIntro";
+import PageTransition from "@/components/layout/PageTransition";
 import { ShieldAlert } from "lucide-react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
 
@@ -35,6 +37,22 @@ const ProblemsGaps = () => (
       title="Problems and Gaps in Haat Bazar Systems"
       description="Despite their importance, haat bazars in Kondagaon face systemic challenges that limit their potential as platforms for local circular economy and livelihood improvement."
     />
+
+    <SectionIntro title="What Holds the Haat Back">
+      <p>
+        For all their economic and ecological value, haats remain
+        under-supported and under-organised. Sellers consistently raise the
+        same set of constraints — weak bargaining power, dependency on
+        middlemen, missing storage and transport, and basic infrastructure
+        gaps that affect women in particular.
+      </p>
+      <p>
+        The grid below catalogues ten recurring problems identified across the
+        six studied markets, followed by a chart showing how often each was
+        reported. A closing note flags the gendered dimension of these
+        challenges.
+      </p>
+    </SectionIntro>
 
     <section className="section-pad">
       <div className="container-page">
@@ -92,6 +110,12 @@ const ProblemsGaps = () => (
         </div>
       </div>
     </section>
+
+    <PageTransition
+      summary="Naming the problems is only half the work. The next chapter translates these constraints into a set of concrete, prioritised recommendations — small interventions and structural shifts that could meaningfully strengthen the haat bazar system."
+      prev={{ to: "/household-economy", chapter: "Chapter 07", label: "Household Economy" }}
+      next={{ to: "/recommendations", chapter: "Chapter 09", label: "Recommendations" }}
+    />
   </>
 );
 

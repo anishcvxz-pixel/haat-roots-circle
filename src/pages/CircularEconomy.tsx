@@ -1,4 +1,6 @@
 import PageHeader from "@/components/layout/PageHeader";
+import SectionIntro from "@/components/layout/SectionIntro";
+import PageTransition from "@/components/layout/PageTransition";
 import { haats } from "@/data/researchData";
 
 const flowNodes = [
@@ -43,6 +45,21 @@ const CircularEconomy = () => (
       title="Circular Economy Practices in Haat Bazars"
       description="Haat bazars in Kondagaon exhibit several naturally occurring circular economy practices — rooted in necessity, tradition, and community culture. These practices reduce waste, conserve resources, and keep economic value within the local community."
     />
+
+    <SectionIntro title="An Economy That Closes Its Own Loop">
+      <p>
+        Long before "circular economy" became a policy phrase, rural haats
+        operated on its principles by default — sourcing locally, packaging in
+        leaves, reusing baskets, and feeding spoiled produce to livestock.
+        These practices are economic necessities as much as ecological choices.
+      </p>
+      <p>
+        This chapter visualises the local loop, catalogues the circular
+        practices observed during fieldwork, and benchmarks each studied haat
+        on five circularity dimensions through a simple traffic-light score
+        card.
+      </p>
+    </SectionIntro>
 
     {/* Circular flow */}
     <section className="section-pad">
@@ -127,6 +144,12 @@ const CircularEconomy = () => (
         </div>
       </div>
     </section>
+
+    <PageTransition
+      summary="Circularity sustains the ecology of the haat, but its human meaning lies in what the income enables at home — children's school fees, medicine, repaid loans, a small saving. The next chapter turns to the household economy that haat earnings underwrite."
+      prev={{ to: "/product-flow", chapter: "Chapter 05", label: "Product Flow" }}
+      next={{ to: "/household-economy", chapter: "Chapter 07", label: "Household Economy" }}
+    />
   </>
 );
 
