@@ -1,4 +1,6 @@
 import PageHeader from "@/components/layout/PageHeader";
+import SectionIntro from "@/components/layout/SectionIntro";
+import PageTransition from "@/components/layout/PageTransition";
 import { haats } from "@/data/researchData";
 import { MapPin, Image as ImageIcon } from "lucide-react";
 
@@ -29,6 +31,21 @@ const StudyArea = () => (
       title="Study Area — Kondagaon District, Chhattisgarh"
       description="A tribal-majority district in the Bastar division, characterised by rich forest cover, traditional livelihoods, and a vibrant network of weekly haat bazars."
     />
+
+    <SectionIntro title="Setting the Scene">
+      <p>
+        Kondagaon lies in the heart of Chhattisgarh's Bastar plateau, where dense
+        sal and bamboo forests meet small terraced fields cultivated by Gond,
+        Halba, and Muria communities. Geography, ecology, and culture together
+        shape an economy that is largely subsistence-based but deeply
+        interconnected through weekly markets.
+      </p>
+      <p>
+        This chapter introduces the district profile and the six haat bazars
+        chosen for in-depth study. Together they offer a representative cross-section
+        of how scale, location, and product mix vary across a single district.
+      </p>
+    </SectionIntro>
 
     <section className="section-pad">
       <div className="container-page grid lg:grid-cols-2 gap-8">
@@ -104,6 +121,12 @@ const StudyArea = () => (
         </div>
       </div>
     </section>
+
+    <PageTransition
+      summary="Having located the study geographically and identified the six anchor haats, the next chapter zooms into each of these markets individually — their sellers, products, and the everyday rhythms that distinguish one haat from another."
+      prev={{ to: "/", chapter: "Chapter 01", label: "Introduction" }}
+      next={{ to: "/haat-profiles", chapter: "Chapter 03", label: "Haat Bazar Profiles" }}
+    />
   </>
 );
 

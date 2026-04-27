@@ -1,4 +1,6 @@
 import PageHeader from "@/components/layout/PageHeader";
+import SectionIntro from "@/components/layout/SectionIntro";
+import PageTransition from "@/components/layout/PageTransition";
 import { ArrowRight, TreePine, Tractor, Truck, Store, Users, Recycle } from "lucide-react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
 
@@ -46,6 +48,21 @@ const ProductFlow = () => (
       title="Product Flow in Haat Bazar Systems"
       description="From forest and farm to consumer — tracing how goods, money, and value move through the weekly market."
     />
+
+    <SectionIntro title="Following the Goods">
+      <p>
+        Behind every transaction at a haat lies a chain of small but deliberate
+        steps — collection, processing, transport, display, sale, and a final
+        return of cash and unsold material to the household. These steps look
+        different for a basket of mahua flowers, a sack of tomatoes, or a
+        bundle of bamboo brooms.
+      </p>
+      <p>
+        This chapter first lays out the overall product flow, then follows three
+        characteristic journeys, and finally summarises the share of sellers
+        operating across major product categories.
+      </p>
+    </SectionIntro>
 
     {/* Main flow */}
     <section className="section-pad">
@@ -112,6 +129,12 @@ const ProductFlow = () => (
         </div>
       </div>
     </section>
+
+    <PageTransition
+      summary="Tracing these flows reveals a striking pattern — much of what enters a haat is sourced, sold, consumed, and even reused within a small geographic radius. This is the foundation of the local circular economy explored in the next chapter."
+      prev={{ to: "/stakeholders", chapter: "Chapter 04", label: "Stakeholder Mapping" }}
+      next={{ to: "/circular-economy", chapter: "Chapter 06", label: "Circular Economy Practices" }}
+    />
   </>
 );
 

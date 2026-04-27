@@ -1,4 +1,6 @@
 import PageHeader from "@/components/layout/PageHeader";
+import SectionIntro from "@/components/layout/SectionIntro";
+import PageTransition from "@/components/layout/PageTransition";
 import {
   PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend,
   BarChart, Bar, XAxis, YAxis, CartesianGrid,
@@ -49,6 +51,21 @@ const HouseholdEconomy = () => (
       title="Household Economy Impact of Haat Income"
       description="For most tribal and rural households in Kondagaon, haat income is a critical supplement — sometimes the only source of cash income. It supports essential expenditures and builds household resilience."
     />
+
+    <SectionIntro title="Where the Haat Money Goes">
+      <p>
+        For most participating households, the haat is the single most reliable
+        source of cash income across the year. The amounts are modest by urban
+        standards, but they sustain food security, schooling, basic healthcare,
+        and the small reinvestments that keep farming and forest collection
+        viable.
+      </p>
+      <p>
+        The visuals below show how a typical week's haat earnings are
+        allocated, summarise headline income figures, share voices from sellers
+        themselves, and compare income sources across three household types.
+      </p>
+    </SectionIntro>
 
     <section className="section-pad">
       <div className="container-page grid lg:grid-cols-2 gap-8">
@@ -112,6 +129,12 @@ const HouseholdEconomy = () => (
         </div>
       </div>
     </section>
+
+    <PageTransition
+      summary="The household impact is real but fragile. Behind the modest income figures lie persistent structural problems — low prices, middlemen dependency, weak infrastructure — that limit how far the haat can take a family. The next chapter examines these problems head-on."
+      prev={{ to: "/circular-economy", chapter: "Chapter 06", label: "Circular Economy" }}
+      next={{ to: "/problems-gaps", chapter: "Chapter 08", label: "Problems and Gaps" }}
+    />
   </>
 );
 

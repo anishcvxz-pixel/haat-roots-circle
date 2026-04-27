@@ -1,4 +1,6 @@
 import PageHeader from "@/components/layout/PageHeader";
+import SectionIntro from "@/components/layout/SectionIntro";
+import PageTransition from "@/components/layout/PageTransition";
 import { stakeholders } from "@/data/researchData";
 
 const ringColors = {
@@ -19,6 +21,21 @@ const Stakeholders = () => {
         title="Stakeholder Mapping"
         description="The haat bazar ecosystem involves a diverse set of stakeholders — each playing a distinct role in production, trade, governance, and support."
       />
+
+      <SectionIntro title="Who Makes the Haat Work">
+        <p>
+          A weekly market is not simply a gathering of buyers and sellers. It is
+          held together by overlapping circles of actors — primary producers
+          and consumers at the centre, traders and transporters in the middle,
+          and a wider ring of cooperatives, government departments, and support
+          institutions on the outside.
+        </p>
+        <p>
+          The hub-and-spoke diagram below visualises these three rings, while
+          the table that follows details the role, contributions, and pressing
+          needs of each stakeholder group identified during the field study.
+        </p>
+      </SectionIntro>
 
       {/* Hub & spoke diagram */}
       <section className="section-pad">
@@ -125,6 +142,12 @@ const Stakeholders = () => {
           </div>
         </div>
       </section>
+
+      <PageTransition
+        summary="With the cast of stakeholders mapped, the question becomes one of movement: how do products, money, and value actually travel between them? The next chapter follows that journey from forest and farm to consumer and back."
+        prev={{ to: "/haat-profiles", chapter: "Chapter 03", label: "Haat Bazar Profiles" }}
+        next={{ to: "/product-flow", chapter: "Chapter 05", label: "Product Flow" }}
+      />
     </>
   );
 };

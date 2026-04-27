@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Users, ClipboardList } from "lucide-react";
 import heroImg from "@/assets/hero-haat.jpg";
+import PageTransition from "@/components/layout/PageTransition";
 
 const themes = [
   { icon: "🌿", title: "Tribal Livelihoods" },
@@ -138,6 +139,11 @@ const Home = () => (
         </div>
       </div>
     </section>
+
+    <PageTransition
+      summary="The chapters that follow trace the haat bazar system from the ground up — beginning with the geography and people of Kondagaon, then moving through individual market profiles, the stakeholders who animate them, and the flows of products, value, and waste that connect forest, farm, and household."
+      next={{ to: "/study-area", chapter: "Chapter 02", label: "Study Area — Kondagaon District" }}
+    />
   </>
 );
 

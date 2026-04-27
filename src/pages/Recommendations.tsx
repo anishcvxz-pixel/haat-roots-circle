@@ -1,4 +1,6 @@
 import PageHeader from "@/components/layout/PageHeader";
+import SectionIntro from "@/components/layout/SectionIntro";
+import PageTransition from "@/components/layout/PageTransition";
 
 type Rec = { num: number; icon: string; title: string; desc: string };
 
@@ -32,6 +34,20 @@ const Recommendations = () => (
       title="Recommendations for Strengthening Haat Bazar Systems"
       description="Based on field observations and stakeholder interviews, the following recommendations are proposed to improve the functioning of haat bazars as platforms for local livelihoods and circular economy."
     />
+
+    <SectionIntro title="From Findings to Action">
+      <p>
+        The recommendations below emerged directly from sellers, buyers, SHG
+        members, and local officials interviewed during fieldwork. They are
+        deliberately practical — calibrated to the scale, budgets, and
+        institutional capacity available at the village and block level.
+      </p>
+      <p>
+        Each recommendation is presented as a numbered card and then placed on
+        a 2×2 priority matrix that compares ease of implementation against
+        expected impact, helping FES and partner agencies sequence the work.
+      </p>
+    </SectionIntro>
 
     <section className="section-pad">
       <div className="container-page grid md:grid-cols-2 gap-5">
@@ -79,6 +95,12 @@ const Recommendations = () => (
         </div>
       </div>
     </section>
+
+    <PageTransition
+      summary="Recommendations gain credibility from the data behind them. The final chapter opens up the underlying field dataset — sellers, buyers, prices, products, and problems — through an interactive dashboard that lets readers explore the evidence themselves."
+      prev={{ to: "/problems-gaps", chapter: "Chapter 08", label: "Problems and Gaps" }}
+      next={{ to: "/dashboard", chapter: "Chapter 10", label: "Field Data Dashboard" }}
+    />
   </>
 );
 

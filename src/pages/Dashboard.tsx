@@ -1,5 +1,7 @@
 import { useMemo, useState } from "react";
 import PageHeader from "@/components/layout/PageHeader";
+import SectionIntro from "@/components/layout/SectionIntro";
+import PageTransition from "@/components/layout/PageTransition";
 import { fieldRows, haats } from "@/data/researchData";
 import { Download, Search, Users, ShoppingBag, UsersRound, Layers, Coins, AlertCircle, Recycle } from "lucide-react";
 import {
@@ -92,6 +94,22 @@ const Dashboard = () => {
         title="Field Data Dashboard"
         description="This dashboard presents data collected through primary field interviews at selected haat bazars in Kondagaon. All data is indicative and based on field observations during April–May 2026."
       />
+
+      <SectionIntro title="Explore the Field Evidence">
+        <p>
+          This final chapter opens the underlying dataset. Use the filters
+          below to narrow the records by haat, respondent type, product
+          category, gender, income range, or reported problem. The summary
+          tiles, charts, and table all update in real time to reflect the
+          current selection.
+        </p>
+        <p>
+          The data is indicative rather than statistically representative —
+          drawn from interviews conducted across April–May 2026 to illustrate
+          patterns, not to generalise. Names have been anonymised; photographs
+          will be added once field-visit imagery is processed.
+        </p>
+      </SectionIntro>
 
       {/* Filters */}
       <section className="py-8 border-b border-border bg-muted/30">
@@ -257,6 +275,12 @@ const Dashboard = () => {
           </p>
         </div>
       </section>
+
+      <PageTransition
+        summary="This concludes the ten-chapter study of Haat Bazar Systems and Local Circular Economy in Kondagaon. The findings are intended as a working baseline for FES and partner organisations — a starting point for deeper enquiry, programme design, and continued conversation with the communities whose markets, livelihoods, and ecologies these chapters describe."
+        prev={{ to: "/recommendations", chapter: "Chapter 09", label: "Recommendations" }}
+        next={{ to: "/", chapter: "Return", label: "Back to Introduction" }}
+      />
     </>
   );
 };

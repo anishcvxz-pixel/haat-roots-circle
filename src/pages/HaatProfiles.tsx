@@ -1,5 +1,7 @@
 import { useState } from "react";
 import PageHeader from "@/components/layout/PageHeader";
+import SectionIntro from "@/components/layout/SectionIntro";
+import PageTransition from "@/components/layout/PageTransition";
 import { haats } from "@/data/researchData";
 import { Image as ImageIcon, AlertTriangle, Users } from "lucide-react";
 import {
@@ -21,6 +23,21 @@ const HaatProfiles = () => {
         title="Haat Bazar Profiles"
         description="Detailed profiles of each studied haat — sellers, products, key challenges, and field observations."
       />
+
+      <SectionIntro title="Six Markets, Six Stories">
+        <p>
+          No two haats are alike. While all share the basic rhythm of a weekly
+          gathering, each carries a distinct character shaped by its catchment
+          villages, dominant product mix, and the seller groups who arrive
+          before sunrise to claim their pitch.
+        </p>
+        <p>
+          Use the selector below to move between the six studied haats. Each
+          profile draws on direct observation and seller interviews to capture
+          the on-ground reality — what is sold, who sells, what works, and
+          where the market falls short.
+        </p>
+      </SectionIntro>
 
       <section className="section-pad">
         <div className="container-page">
@@ -95,6 +112,12 @@ const HaatProfiles = () => {
           </article>
         </div>
       </section>
+
+      <PageTransition
+        summary="These profiles reveal the diversity of haats across a single district. To understand how each market actually functions, we now turn to the people who make it work — the producers, intermediaries, support institutions, and governance bodies that constitute the wider stakeholder ecosystem."
+        prev={{ to: "/study-area", chapter: "Chapter 02", label: "Study Area" }}
+        next={{ to: "/stakeholders", chapter: "Chapter 04", label: "Stakeholder Mapping" }}
+      />
     </>
   );
 };
