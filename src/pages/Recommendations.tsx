@@ -79,8 +79,8 @@ const Recommendations = () => (
         <div className="card-earth p-6 md:p-8">
           <div className="relative">
             {/* axis labels */}
-            <div className="absolute -left-2 top-1/2 -translate-y-1/2 -rotate-90 text-xs uppercase tracking-widest text-secondary font-semibold whitespace-nowrap origin-center" style={{ transformOrigin: "center" }}>
-              Impact Level →
+            <div className="absolute left-2 top-1/2 -translate-y-1/2 -rotate-90 text-xs uppercase tracking-widest text-secondary font-semibold whitespace-nowrap origin-center">
+              Impact Level ↑
             </div>
             <div className="text-center text-xs uppercase tracking-widest text-secondary font-semibold mb-3">Ease of Implementation →</div>
 
