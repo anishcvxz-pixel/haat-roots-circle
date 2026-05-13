@@ -1,13 +1,15 @@
-import { Leaf } from "lucide-react";
+import fesLogo from "@/assets/fes-logo.png";
 
 const Footer = () => (
   <footer className="mt-20 bg-gradient-earth text-primary-foreground">
     <div className="container-page py-12 grid gap-8 md:grid-cols-3">
       <div>
         <div className="flex items-center gap-3 mb-3">
-          <div className="w-10 h-10 rounded-full bg-primary-foreground/15 flex items-center justify-center">
-            <Leaf className="w-5 h-5" />
-          </div>
+          <img
+            src={fesLogo}
+            alt="Foundation for Ecological Security"
+            className="h-10 w-auto rounded-full bg-primary-foreground/15 p-1"
+          />
           <div>
             <div className="font-serif font-bold text-lg">Haat Bazar Systems</div>
             <div className="text-xs opacity-80">& Local Circular Economy</div>
