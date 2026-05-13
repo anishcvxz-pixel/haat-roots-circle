@@ -94,7 +94,7 @@ const StudyArea = () => (
                 <tr key={h.name} className={i % 2 ? "bg-background/40" : ""}>
                   <td className="px-4 py-3 font-semibold text-primary">{h.name}</td>
                   <td className="px-4 py-3">{h.block}</td>
-                  <td className="px-4 py-3"><span className="inline-block bg-accent/20 text-accent-foreground px-2 py-1 rounded text-xs font-medium">{h.marketDay}</span></td>
+                  <td className="px-4 py-3"><span className="inline-block bg-accent/20 text-accent-foreground px-2 py-1 rounded text-xs font-medium shadow-none">{h.marketDay}</span></td>
                   <td className="px-4 py-3 text-foreground/80">{h.villages}</td>
                   <td className="px-4 py-3 text-foreground/80">{h.products}</td>
                 </tr>
