@@ -77,19 +77,25 @@ const Recommendations = () => (
         <p className="text-muted-foreground mb-8">Top recommendations mapped on Ease of Implementation × Impact Level.</p>
 
         <div className="card-earth p-6 md:p-8">
-          <div className="relative">
-            {/* axis labels */}
-            <div className="absolute left-2 top-1/2 -translate-y-1/2 -rotate-90 text-xs uppercase tracking-widest text-secondary font-semibold whitespace-nowrap origin-center">
-              Impact Level ↑
+          <div className="flex gap-3 md:gap-4">
+            {/* Y-axis label */}
+            <div className="flex items-center justify-center shrink-0">
+              <span className="block -rotate-90 whitespace-nowrap text-xs uppercase tracking-widest text-secondary font-semibold">
+                Impact Level ↑
+              </span>
             </div>
-            <div className="text-center text-xs uppercase tracking-widest text-secondary font-semibold mb-3">Ease of Implementation →</div>
 
-            <div className="grid grid-cols-2 grid-rows-2 gap-3 md:gap-4 ml-6">
-              {/* High impact, easy (top-left desirable) */}
-              <Quadrant title="High Impact · Easy" tint="bg-success/10 border-success/40" items={quadrants.highImpactEasy.map(findRec)} />
-              <Quadrant title="High Impact · Hard" tint="bg-accent/10 border-accent/40" items={quadrants.highImpactHard.map(findRec)} />
-              <Quadrant title="Low Impact · Easy" tint="bg-muted border-border" items={quadrants.lowImpactEasy.map(findRec)} />
-              <Quadrant title="Low Impact · Hard" tint="bg-destructive/10 border-destructive/40" items={quadrants.lowImpactHard.map(findRec)} />
+            <div className="flex-1 min-w-0">
+              {/* X-axis label */}
+              <div className="text-center text-xs uppercase tracking-widest text-secondary font-semibold mb-3">Ease of Implementation →</div>
+
+              <div className="grid grid-cols-2 grid-rows-2 gap-3 md:gap-4">
+                {/* High impact, easy (top-left desirable) */}
+                <Quadrant title="High Impact · Easy" tint="bg-success/10 border-success/40" items={quadrants.highImpactEasy.map(findRec)} />
+                <Quadrant title="High Impact · Hard" tint="bg-accent/10 border-accent/40" items={quadrants.highImpactHard.map(findRec)} />
+                <Quadrant title="Low Impact · Easy" tint="bg-muted border-border" items={quadrants.lowImpactEasy.map(findRec)} />
+                <Quadrant title="Low Impact · Hard" tint="bg-destructive/10 border-destructive/40" items={quadrants.lowImpactHard.map(findRec)} />
+              </div>
             </div>
           </div>
         </div>
