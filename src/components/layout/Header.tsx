@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Menu, X, Leaf } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import fesLogo from "@/assets/fes-logo.png";
 
 const navItems = [
   { to: "/", label: "Home" },
@@ -43,12 +44,13 @@ const Header = () => {
     >
       <div className="container-page flex items-center justify-between h-16">
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-full bg-gradient-earth flex items-center justify-center shadow-soft group-hover:scale-105 transition-transform">
-            <Leaf className="w-5 h-5 text-primary-foreground" strokeWidth={2.4} />
-          </div>
-          <div className="leading-tight">
-            <div className="font-serif font-bold text-primary text-lg">FES</div>
-            <div className="text-[10px] uppercase tracking-widest text-muted-foreground -mt-0.5 hidden sm:block">
+          <img
+            src={fesLogo}
+            alt="Foundation for Ecological Security"
+            className="h-10 w-auto group-hover:scale-105 transition-transform"
+          />
+          <div className="leading-tight hidden sm:block">
+            <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
               Haat Bazar Study
             </div>
           </div>
