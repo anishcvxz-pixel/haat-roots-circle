@@ -1,4 +1,4 @@
-import { Leaf } from "lucide-react";
+import fesLogo from "@/assets/fes-logo.png";
 
 const Footer = () => (
   <footer className="mt-20 bg-gradient-earth text-primary-foreground">
