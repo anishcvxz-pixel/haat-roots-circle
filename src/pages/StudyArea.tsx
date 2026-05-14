@@ -1,8 +1,11 @@
+import { useState } from "react";
 import PageHeader from "@/components/layout/PageHeader";
 import SectionIntro from "@/components/layout/SectionIntro";
 import PageTransition from "@/components/layout/PageTransition";
 import { haats } from "@/data/researchData";
-import { Image as ImageIcon } from "lucide-react";
+import { Image as ImageIcon, ZoomIn, ZoomOut, Maximize2, X } from "lucide-react";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 import kondagaonMap from "@/assets/kondagaon-map.png";
 
 const profile = [
