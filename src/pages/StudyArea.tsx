@@ -1,8 +1,11 @@
+import { useState } from "react";
 import PageHeader from "@/components/layout/PageHeader";
 import SectionIntro from "@/components/layout/SectionIntro";
 import PageTransition from "@/components/layout/PageTransition";
 import { haats } from "@/data/researchData";
-import { Image as ImageIcon } from "lucide-react";
+import { Image as ImageIcon, ZoomIn, ZoomOut, Maximize2, X } from "lucide-react";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 import kondagaonMap from "@/assets/kondagaon-map.png";
 
 const profile = [
@@ -25,7 +28,11 @@ const galleryLabels = [
   "Product Display",
 ];
 
-const StudyArea = () => (
+const StudyArea = () => {
+  const [mapOpen, setMapOpen] = useState(false);
+  const [zoom, setZoom] = useState(1);
+  const openMap = () => { setZoom(1); setMapOpen(true); };
+  return (
   <>
     <PageHeader
       eyebrow="Page 02"
@@ -63,17 +70,30 @@ const StudyArea = () => (
           </dl>
         </div>
 
-        {/* Map placeholder */}
+        {/* Map */}
         <div className="card-earth p-8 flex flex-col">
-          <h2 className="text-2xl font-serif font-bold text-primary mb-5">Location Map</h2>
-          <div className="flex-1 min-h-[280px] rounded-lg overflow-hidden border border-border bg-primary/5">
+          <div className="flex items-center justify-between mb-5">
+            <h2 className="text-2xl font-serif font-bold text-primary">Location Map</h2>
+            <Button variant="ghost" size="sm" onClick={openMap} className="gap-1.5">
+              <Maximize2 className="w-4 h-4" /> Zoom
+            </Button>
+          </div>
+          <button
+            type="button"
+            onClick={openMap}
+            aria-label="Open zoomable map"
+            className="group relative flex-1 min-h-[280px] rounded-lg overflow-hidden border border-border bg-primary/5 cursor-zoom-in"
+          >
             <img
               src={kondagaonMap}
               alt="Map of Kondagaon district, Chhattisgarh showing study villages including Lanjoda, Kondagaon, Chhotedongar, and Amravati Forest Range"
-              className="w-full h-full object-contain bg-white"
+              className="w-full h-full object-contain bg-white transition-transform duration-300 group-hover:scale-[1.02]"
               loading="lazy"
             />
-          </div>
+            <span className="absolute bottom-2 right-2 inline-flex items-center gap-1 rounded-md bg-background/90 px-2 py-1 text-xs font-medium text-foreground shadow-sm backdrop-blur">
+              <ZoomIn className="w-3.5 h-3.5" /> Click to zoom
+            </span>
+          </button>
         </div>
       </div>
     </section>
@@ -131,7 +151,61 @@ const StudyArea = () => (
       prev={{ to: "/", chapter: "Chapter 01", label: "Introduction" }}
       next={{ to: "/haat-profiles", chapter: "Chapter 03", label: "Haat Bazar Profiles" }}
     />
+
+    <Dialog open={mapOpen} onOpenChange={setMapOpen}>
+      <DialogContent className="max-w-[95vw] w-[95vw] h-[92vh] p-0 overflow-hidden bg-background">
+        <DialogTitle className="sr-only">Kondagaon District Map</DialogTitle>
+        <div className="absolute top-3 right-3 z-20 flex items-center gap-2">
+          <div className="flex items-center gap-1 rounded-md bg-background/90 border border-border shadow-sm backdrop-blur p-1">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8"
+              onClick={() => setZoom((z) => Math.max(1, +(z - 0.5).toFixed(2)))}
+              aria-label="Zoom out"
+            >
+              <ZoomOut className="w-4 h-4" />
+            </Button>
+            <span className="px-2 text-xs font-medium tabular-nums w-12 text-center">
+              {Math.round(zoom * 100)}%
+            </span>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8"
+              onClick={() => setZoom((z) => Math.min(6, +(z + 0.5).toFixed(2)))}
+              aria-label="Zoom in"
+            >
+              <ZoomIn className="w-4 h-4" />
+            </Button>
+          </div>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-9 w-9 rounded-md bg-background/90 border border-border shadow-sm backdrop-blur"
+            onClick={() => setMapOpen(false)}
+            aria-label="Close"
+          >
+            <X className="w-4 h-4" />
+          </Button>
+        </div>
+        <div className="w-full h-full overflow-auto bg-white">
+          <div
+            className="origin-top-left transition-transform duration-200"
+            style={{ transform: `scale(${zoom})`, width: `${100 * zoom}%` }}
+          >
+            <img
+              src={kondagaonMap}
+              alt="Kondagaon district map (zoomable)"
+              className="w-full h-auto select-none"
+              draggable={false}
+            />
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
   </>
-);
+  );
+};
 
 export default StudyArea;
