@@ -70,17 +70,30 @@ const StudyArea = () => {
           </dl>
         </div>
 
-        {/* Map placeholder */}
+        {/* Map */}
         <div className="card-earth p-8 flex flex-col">
-          <h2 className="text-2xl font-serif font-bold text-primary mb-5">Location Map</h2>
-          <div className="flex-1 min-h-[280px] rounded-lg overflow-hidden border border-border bg-primary/5">
+          <div className="flex items-center justify-between mb-5">
+            <h2 className="text-2xl font-serif font-bold text-primary">Location Map</h2>
+            <Button variant="ghost" size="sm" onClick={openMap} className="gap-1.5">
+              <Maximize2 className="w-4 h-4" /> Zoom
+            </Button>
+          </div>
+          <button
+            type="button"
+            onClick={openMap}
+            aria-label="Open zoomable map"
+            className="group relative flex-1 min-h-[280px] rounded-lg overflow-hidden border border-border bg-primary/5 cursor-zoom-in"
+          >
             <img
               src={kondagaonMap}
               alt="Map of Kondagaon district, Chhattisgarh showing study villages including Lanjoda, Kondagaon, Chhotedongar, and Amravati Forest Range"
-              className="w-full h-full object-contain bg-white"
+              className="w-full h-full object-contain bg-white transition-transform duration-300 group-hover:scale-[1.02]"
               loading="lazy"
             />
-          </div>
+            <span className="absolute bottom-2 right-2 inline-flex items-center gap-1 rounded-md bg-background/90 px-2 py-1 text-xs font-medium text-foreground shadow-sm backdrop-blur">
+              <ZoomIn className="w-3.5 h-3.5" /> Click to zoom
+            </span>
+          </button>
         </div>
       </div>
     </section>
