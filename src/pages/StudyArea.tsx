@@ -28,7 +28,11 @@ const galleryLabels = [
   "Product Display",
 ];
 
-const StudyArea = () => (
+const StudyArea = () => {
+  const [mapOpen, setMapOpen] = useState(false);
+  const [zoom, setZoom] = useState(1);
+  const openMap = () => { setZoom(1); setMapOpen(true); };
+  return (
   <>
     <PageHeader
       eyebrow="Page 02"
