@@ -151,6 +151,59 @@ const StudyArea = () => {
       prev={{ to: "/", chapter: "Chapter 01", label: "Introduction" }}
       next={{ to: "/haat-profiles", chapter: "Chapter 03", label: "Haat Bazar Profiles" }}
     />
+
+    <Dialog open={mapOpen} onOpenChange={setMapOpen}>
+      <DialogContent className="max-w-[95vw] w-[95vw] h-[92vh] p-0 overflow-hidden bg-background">
+        <DialogTitle className="sr-only">Kondagaon District Map</DialogTitle>
+        <div className="absolute top-3 right-3 z-20 flex items-center gap-2">
+          <div className="flex items-center gap-1 rounded-md bg-background/90 border border-border shadow-sm backdrop-blur p-1">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8"
+              onClick={() => setZoom((z) => Math.max(1, +(z - 0.5).toFixed(2)))}
+              aria-label="Zoom out"
+            >
+              <ZoomOut className="w-4 h-4" />
+            </Button>
+            <span className="px-2 text-xs font-medium tabular-nums w-12 text-center">
+              {Math.round(zoom * 100)}%
+            </span>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8"
+              onClick={() => setZoom((z) => Math.min(6, +(z + 0.5).toFixed(2)))}
+              aria-label="Zoom in"
+            >
+              <ZoomIn className="w-4 h-4" />
+            </Button>
+          </div>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-9 w-9 rounded-md bg-background/90 border border-border shadow-sm backdrop-blur"
+            onClick={() => setMapOpen(false)}
+            aria-label="Close"
+          >
+            <X className="w-4 h-4" />
+          </Button>
+        </div>
+        <div className="w-full h-full overflow-auto bg-white">
+          <div
+            className="origin-top-left transition-transform duration-200"
+            style={{ transform: `scale(${zoom})`, width: `${100 * zoom}%` }}
+          >
+            <img
+              src={kondagaonMap}
+              alt="Kondagaon district map (zoomable)"
+              className="w-full h-auto select-none"
+              draggable={false}
+            />
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
   </>
   );
 };
