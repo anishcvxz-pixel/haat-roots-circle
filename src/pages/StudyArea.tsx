@@ -2,7 +2,8 @@ import PageHeader from "@/components/layout/PageHeader";
 import SectionIntro from "@/components/layout/SectionIntro";
 import PageTransition from "@/components/layout/PageTransition";
 import { haats } from "@/data/researchData";
-import { MapPin, Image as ImageIcon } from "lucide-react";
+import { Image as ImageIcon } from "lucide-react";
+import kondagaonMap from "@/assets/kondagaon-map.png";
 
 const profile = [
   ["State", "Chhattisgarh"],
@@ -65,10 +66,13 @@ const StudyArea = () => (
         {/* Map placeholder */}
         <div className="card-earth p-8 flex flex-col">
           <h2 className="text-2xl font-serif font-bold text-primary mb-5">Location Map</h2>
-          <div className="flex-1 min-h-[280px] border-2 border-dashed border-primary/30 rounded-lg bg-primary/5 flex flex-col items-center justify-center text-center p-6">
-            <MapPin className="w-12 h-12 text-primary mb-3" />
-            <p className="font-serif text-lg text-primary font-semibold">District Map</p>
-            <p className="text-sm text-muted-foreground mt-1">Kondagaon, Chhattisgarh (To be added)</p>
+          <div className="flex-1 min-h-[280px] rounded-lg overflow-hidden border border-border bg-primary/5">
+            <img
+              src={kondagaonMap}
+              alt="Map of Kondagaon district, Chhattisgarh showing study villages including Lanjoda, Kondagaon, Chhotedongar, and Amravati Forest Range"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
