@@ -139,6 +139,7 @@ const StudyArea = () => {
       next={{ to: "/haat-profiles", chapter: "Chapter 03", label: "Haat Bazar Profiles" }}
     />
   </>
-);
+  );
+};
 
 export default StudyArea;
