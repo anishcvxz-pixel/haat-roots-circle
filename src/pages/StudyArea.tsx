@@ -70,7 +70,7 @@ const StudyArea = () => (
             <img
               src={kondagaonMap}
               alt="Map of Kondagaon district, Chhattisgarh showing study villages including Lanjoda, Kondagaon, Chhotedongar, and Amravati Forest Range"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain bg-white"
               loading="lazy"
             />
           </div>
