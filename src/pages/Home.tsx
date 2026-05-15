@@ -14,7 +14,7 @@ const themes = [
 ];
 
 const stats = [
-  { icon: MapPin, label: "Haats Studied", value: "6" },
+  { icon: MapPin, label: "Haats Studied", value: "4" },
   { icon: Users, label: "Villages Covered", value: "25+" },
   { icon: ClipboardList, label: "Respondents Interviewed", value: "80+" },
 ];

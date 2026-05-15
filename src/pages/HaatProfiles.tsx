@@ -24,7 +24,7 @@ const HaatProfiles = () => {
         description="Detailed profiles of each studied haat — sellers, products, key challenges, and field observations."
       />
 
-      <SectionIntro title="Six Markets, Six Stories">
+      <SectionIntro title="Four Markets, Four Stories">
         <p>
           No two haats are alike. While all share the basic rhythm of a weekly
           gathering, each carries a distinct character shaped by its catchment
@@ -32,7 +32,7 @@ const HaatProfiles = () => {
           before sunrise to claim their pitch.
         </p>
         <p>
-          Use the selector below to move between the six studied haats. Each
+          Use the selector below to move between the four studied haats. Each
           profile draws on direct observation and seller interviews to capture
           the on-ground reality — what is sold, who sells, what works, and
           where the market falls short.

@@ -71,34 +71,6 @@ export const haats: Haat[] = [
     fieldNote:
       "Cattle and goat trade is significant here. A separate corner is informally allocated for livestock.",
   },
-  {
-    name: "Keshkal Haat",
-    block: "Keshkal",
-    marketDay: "Tuesday",
-    villages: "Keshkal, Keoribhat, Batrali",
-    products: "Bamboo products, vegetables",
-    sellers: 130,
-    buyers: 620,
-    productTags: ["Bamboo products", "Vegetables", "NTFP", "Handicrafts", "Cooked food"],
-    sellerGroups: ["Artisans", "Tribal women", "Farmers", "SHG members"],
-    problems: ["Weak branding", "Transport cost", "Poor roads"],
-    fieldNote:
-      "Bamboo basket and broom artisans dominate. Many products travel from here to urban handicraft buyers.",
-  },
-  {
-    name: "Narayanpur Haat",
-    block: "Narayanpur",
-    marketDay: "Friday",
-    villages: "Narayanpur, Orchha, Benoor",
-    products: "Forest produce, cattle",
-    sellers: 105,
-    buyers: 460,
-    productTags: ["NTFP", "Livestock", "Mahua", "Vegetables", "Grains"],
-    sellerGroups: ["NTFP collectors", "Tribal households", "Livestock traders"],
-    problems: ["Poor roads", "Low prices", "No storage"],
-    fieldNote:
-      "Remote location with strong forest dependence. Most buyers are from within a 15 km radius.",
-  },
 ];
 
 export type Stakeholder = {
