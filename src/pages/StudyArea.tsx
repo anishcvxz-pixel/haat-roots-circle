@@ -49,7 +49,7 @@ const StudyArea = () => {
         interconnected through weekly markets.
       </p>
       <p>
-        This chapter introduces the district profile and the six haat bazars
+        This chapter introduces the district profile and the four haat bazars
         chosen for in-depth study. Together they offer a representative cross-section
         of how scale, location, and product mix vary across a single district.
       </p>
@@ -102,7 +102,7 @@ const StudyArea = () => {
     <section className="section-pad bg-muted/40 border-y border-border">
       <div className="container-page">
         <h2 className="text-2xl md:text-3xl font-serif font-bold text-primary mb-2">Selected Haat Bazars</h2>
-        <p className="text-muted-foreground mb-8">Six weekly markets across blocks of Kondagaon district selected for in-depth study.</p>
+        <p className="text-muted-foreground mb-8">Four weekly markets across blocks of Kondagaon district selected for in-depth study.</p>
 
         <div className="overflow-x-auto card-earth">
           <table className="w-full text-sm">
@@ -147,7 +147,7 @@ const StudyArea = () => {
     </section>
 
     <PageTransition
-      summary="Having located the study geographically and identified the six anchor haats, the next chapter zooms into each of these markets individually — their sellers, products, and the everyday rhythms that distinguish one haat from another."
+      summary="Having located the study geographically and identified the four anchor haats, the next chapter zooms into each of these markets individually — their sellers, products, and the everyday rhythms that distinguish one haat from another."
       prev={{ to: "/", chapter: "Chapter 01", label: "Introduction" }}
       next={{ to: "/haat-profiles", chapter: "Chapter 03", label: "Haat Bazar Profiles" }}
     />
